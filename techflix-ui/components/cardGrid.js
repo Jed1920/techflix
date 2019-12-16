@@ -42,7 +42,7 @@ export function CardGrid(props) {
     return (
         <section style={sectionStyle}>
             <h2 style={sectionTitleStyle}>{props.title}</h2>
-            <ol style={gridStyle}>
+            <ol style={gridStyle} data-testid="filmList">
                 {props.cards.map((card, index) => <li key={index} style={cardStyle}>{card}</li>)}
             </ol>
         </section>

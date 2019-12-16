@@ -36,11 +36,11 @@ const submitButtonStyle = {
 
 export function SearchBox() {
     return (
-        <form style={searchBoxStyle} action="http://localhost:3000/search" method="get">
+        <form data-testid="searchBox" style={searchBoxStyle} action="http://localhost:3000/search" method="get">
             <label htmlFor="searchInput" style={visuallyHiddenStyle}>Search</label>
             <input id="searchInput" name="q" style={searchInputStyle} placeholder="Search"/>
 
-            <button style={submitButtonStyle} type="submit"><SearchIcon/></button>
+            <button data-testid="searchButton" style={submitButtonStyle} type="submit"><SearchIcon/></button>
         </form>
     );
 }
