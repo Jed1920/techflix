@@ -13,6 +13,7 @@ public class Film {
     private String posterImage;
     private String video;
     private String imdbLink;
+    private Long tMDbId;
 
     public Film() { }
 
@@ -23,7 +24,8 @@ public class Film {
                 String bannerImage,
                 String posterImage,
                 String video,
-                String imdbLink) {
+                String imdbLink,
+                Long tMDbId) {
         this.id = id;
         this.title = title;
         this.summary = summary;
@@ -31,6 +33,8 @@ public class Film {
         this.bannerImage = bannerImage;
         this.posterImage = posterImage;
         this.video = video;
+        this.imdbLink = imdbLink;
+        this.tMDbId = tMDbId;
     }
 
     public String getId() {
@@ -63,5 +67,9 @@ public class Film {
 
     public String getImdbLink() {
         return imdbLink;
+    }
+
+    public Long getTMDbId() {
+        return tMDbId;
     }
 }

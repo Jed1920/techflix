@@ -7,6 +7,7 @@ const starWars1 = {
     posterImage: "https://m.media-amazon.com/images/M/MV5BNjE1NmJhMmUtMjA2Yy00YjFjLTg0NGUtZDkzN2ExMTU4OGNkXkEyXkFqcGdeQXVyNDUzNzIxMzk@._V1_SY1000_CR0,0,666,1000_AL_.jpg",
     video: "https://www.youtube.com/embed/bD7bpG-zDJQ",
     imdbLink: "https://www.imdb.com/title/tt0120915/",
+    tmdbId: 1893,
 };
 
 const starWars9 = {
@@ -18,6 +19,7 @@ const starWars9 = {
     posterImage: "https://m.media-amazon.com/images/M/MV5BN2Q3OTk3ZWItN2RiOC00MTk5LThjYzMtMGUxZDE4YTBmMGU3XkEyXkFqcGdeQXVyMjM0NDg3NTE@._V1_SY1000_CR0,0,675,1000_AL_.jpg",
     video: "https://www.youtube.com/embed/8Qn_spdM5Zg",
     imdbLink: "https://www.imdb.com/title/tt2527338/",
+    tmdbId: 181812,
 };
 
 const liamNeeson = {
