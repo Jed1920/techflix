@@ -1,23 +1,22 @@
 package uk.co.techswitch;
 
-import com.fasterxml.jackson.datatype.jsr310.JSR310Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;
 import io.dropwizard.setup.Environment;
 import org.eclipse.jetty.servlets.CrossOriginFilter;
-import org.glassfish.jersey.client.JerseyClient;
 import org.glassfish.jersey.client.JerseyClientBuilder;
 import uk.co.techswitch.controllers.FilmsController;
 import uk.co.techswitch.controllers.PeopleController;
+import uk.co.techswitch.domain.CacheReviews;
 import uk.co.techswitch.repos.LibraryApiClient;
+import uk.co.techswitch.repos.ReviewsApiClient;
 import uk.co.techswitch.services.FilmsService;
 import uk.co.techswitch.services.PeopleService;
 
 import javax.servlet.DispatcherType;
 import javax.servlet.FilterRegistration;
 import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
 import java.util.EnumSet;
 
 public class Api extends Application<Configuration> {
@@ -33,9 +32,11 @@ public class Api extends Application<Configuration> {
         // Repos
         Client client = JerseyClientBuilder.newBuilder().build();
         LibraryApiClient libraryApiClient = new LibraryApiClient(client);
+        ReviewsApiClient reviewApiClient = new ReviewsApiClient(client);
+        CacheReviews cacheReviews = new CacheReviews();
 
         // Services
-        FilmsService filmsService = new FilmsService(libraryApiClient);
+        FilmsService filmsService = new FilmsService(libraryApiClient,reviewApiClient, cacheReviews);
         PeopleService peopleService = new PeopleService(libraryApiClient);
 
         // Controllers
